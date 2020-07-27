@@ -1,6 +1,7 @@
 import scrapy
 import re
 import logging
+from ..items import LeisimaoItem
 
 
 logger = logging.getLogger(__name__)
@@ -17,9 +18,11 @@ class LeisiSpider(scrapy.Spider):
         # logger.warning(ret)
         for html in ret:
             # logger.warning(html)
-            for i in range(1,6):
+            for i in range(1,6):   
+                item = LeisimaoItem()  
                 sro = html.replace('-1-', '-{}-').format(i)
-                url = 'https://www.lesmao.org/' + sro
-                logger.warning(url)
+                item['url'] = 'https://www.lesmao.org/' + sro
+                # logger.warning(url_list)
+                yield item
 
 
