@@ -7,9 +7,11 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 import logging
+
 logger = logging.getLogger()
+
 
 class Pic51Pipeline:
     def process_item(self, item, spider):
-        # logger.warning(item)
+        logger.warning(item)
         return item
