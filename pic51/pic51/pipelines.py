@@ -13,5 +13,5 @@ logger = logging.getLogger()
 
 class Pic51Pipeline:
     def process_item(self, item, spider):
-        logger.warning(item)
+        # logger.warning(item)
         return item
